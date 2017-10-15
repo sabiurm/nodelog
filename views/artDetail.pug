@@ -1,0 +1,15 @@
+extends layout
+
+block content
+ h2.hme-title #{art.title} 
+ hr
+ span posted by #{art.author}
+ br
+ br
+ p= art.body
+ hr
+ 
+ a.btn.btn-primary(href='/article/edit'+art.id) Edit
+ a.btn.btn-danger.delete-rec(href='#' data-id=art.id) Delete
+
+ 

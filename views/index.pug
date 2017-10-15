@@ -1,0 +1,9 @@
+extends layout
+
+block content
+ h2.hme-title #{title} 
+ ul.list-group
+    each article, i in articles
+     li.list-group-item
+        div= article.title
+        div= article.body

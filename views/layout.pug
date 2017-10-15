@@ -1,0 +1,55 @@
+doctype html
+html
+head
+title node sample login
+link(rel='stylesheet' href='/dist/css/bootstrap.css')
+link(rel='stylesheet' href='/dist/css/style.css')
+
+
+body
+
+nav.navbar.navbar-inverse
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand aYYoda
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a(href='/') Home
+       
+      ul.nav.navbar-nav.navbar-right
+       if user
+        li
+          a(href='/articles/add') Add New
+        li
+          a(href='/articles/view') View More
+        li
+            a(href="/users/logout") Logout
+       else
+        li
+            a(href="/users/register") Register
+        li
+            a(href="/users/login") Login
+
+.container
+  != messages('message', locals)
+  if errors
+    each error, i in errors
+        div(class='alert alert-danger') #{errors.msg}
+
+  block content
+  br
+
+  footer.col-xs-12
+    hr
+    p copyRight &copy; 2018
+ 
+  script(src='/dist/js/jquery.min.js')
+  script(src='/dist/js/bootstrap.js')
+  script(src='/dist/js/main.js')
+

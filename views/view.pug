@@ -1,0 +1,9 @@
+extends layout
+
+block content
+ h2.hme-title #{title} 
+ hr
+ ul.list-group
+    each article, i in articles
+     li.list-group-item
+        a(href='/artDetail/'+article.id)= article.title
